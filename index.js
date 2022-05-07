@@ -6,14 +6,12 @@ const cors = require("cors")
 const app = express()
 const port = process.env.PORT || 5000
 
-//asi-11
-//OPwwzvdaGg4C1SqE
 
 app.use(express.json())
 app.use(cors())
 
 
-const uri = "mongodb+srv://asi-11:OPwwzvdaGg4C1SqE@cluster0.tgpgy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri = "mongodb+srv://${process.env.userName}:${process.env.passWord}@cluster0.tgpgy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 async function run() {
 
